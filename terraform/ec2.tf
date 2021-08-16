@@ -22,9 +22,9 @@ resource "null_resource" "ec2" {
   }
   provisioner "file" {
     source      = "../app"
-    destination = "/app"
+    destination = "~/app"
   }
   provisioner "remote-exec" {
-    inline = ["cd /app && npm install && npm start &"]
+    inline = ["cd ~/app && npm install && npm start &"]
   }
 }

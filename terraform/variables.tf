@@ -8,6 +8,9 @@ variable "vpc_id" {
 variable "public_subnet_1" {
   description = "A public subnet for the EC2 instance."
 }
+variable "public_subnet_2" {
+  description = "A public subnet for the ALB."
+}
 
 variable "ec2_instance_type" {
   description = "EC2 instance type."

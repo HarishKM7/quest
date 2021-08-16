@@ -30,7 +30,7 @@ resource "null_resource" "ec2" {
       "sudo mv ~/app/rearc.service /etc/systemd/system",
       "sudo systemctl daemon-reload",
       "sudo systemctl enable rearc",
-      "sudo systemctl start rearc",
+      "sudo systemctl restart rearc",
       "sleep 5"
     ]
   }

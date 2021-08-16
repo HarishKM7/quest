@@ -8,3 +8,11 @@ module "key_pair" {
   key_name   = "rearc-quest"
   public_key = tls_private_key.tls_key.public_key_openssh
 }
+
+module "secrets_manager" {
+  source = "lgallard/secrets-manager/aws"
+  secrets = [{
+    name          = "rearc-quest-private-key"
+    secret_string = tls_private_key.tls_key.private_key_pem
+  }]
+}

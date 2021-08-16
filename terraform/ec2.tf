@@ -13,7 +13,7 @@ module "ec2" {
 }
 
 resource "null_resource" "ec2" {
-  triggers = { instance_id = module.ec2.id }
+  triggers = { instance_id = module.ec2.id[0] }
   connection {
     type        = "ssh"
     user        = "ec2-user"

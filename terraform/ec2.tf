@@ -25,6 +25,13 @@ resource "null_resource" "ec2" {
     destination = "~/app"
   }
   provisioner "remote-exec" {
-    inline = ["cd ~/app && npm install && npm start &"]
+    inline = [
+      "cd ~/app", "chmod +x bin/*", "npm install",
+      "sudo mv ~/app/rearc.service /etc/systemd/system",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl enable rearc",
+      "sudo systemctl start rearc",
+      "sleep 5"
+    ]
   }
 }

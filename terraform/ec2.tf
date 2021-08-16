@@ -10,15 +10,21 @@ module "ec2" {
   user_data                   = file("ec2-user-data.sh")
   vpc_security_group_ids      = [module.security_group.security_group_id]
   associate_public_ip_address = true
+}
 
+resource "null_resource" "ec2" {
+  triggers = { instance_id = module.ec2.id }
+  connection {
+    type        = "ssh"
+    user        = "ec2-user"
+    private_key = tls_private_key.tls_key.private_key_pem
+    host        = module.ec2.public_dns
+  }
   provisioner "file" {
     source      = "../app"
     destination = "/app"
-    connection {
-      type        = "ssh"
-      user        = "ec2-user"
-      private_key = tls_private_key.tls_key.private_key_pem
-      host        = self.public_dns
-    }
+  }
+  provisioner "remote-exec" {
+    inline = ["cd /app && npm install && npm start &"]
   }
 }

@@ -1,0 +1,24 @@
+[Unit]
+Description=Rearc
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /home/ec2-user/app/src/000.js
+WorkingDirectory=/home/ec2-user/app
+
+# Environment variables:
+Environment=NODE_ENV=production
+
+# Allow many incoming connections
+LimitNOFILE=infinity
+
+# Allow core dumps for debugging
+LimitCORE=infinity
+
+StandardInput=null
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

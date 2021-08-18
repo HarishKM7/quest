@@ -24,4 +24,7 @@ sudo systemctl enable docker
 sudo systemctl start docker
 
 # Rearc Docker conatiner
-sudo docker run -p 3030:3000 kmharish/rearc
+sudo docker run -d -p 3030:3000 kmharish/rearc
+
+# Wait
+sleep 5

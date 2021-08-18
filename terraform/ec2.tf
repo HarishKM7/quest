@@ -27,10 +27,11 @@ resource "null_resource" "ec2" {
   provisioner "remote-exec" {
     inline = [
       "cd ~/app", "chmod +x bin/*", "npm install",
+      "sleep 5",
       "sudo mv ~/app/rearc.service /etc/systemd/system",
       "sudo systemctl daemon-reload",
       "sudo systemctl enable rearc",
-      "sudo systemctl restart rearc",
+      "sudo systemctl start rearc",
       "sleep 5"
     ]
   }

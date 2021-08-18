@@ -26,8 +26,9 @@ resource "null_resource" "ec2" {
   }
   provisioner "remote-exec" {
     inline = [
-      "cd ~/app", "chmod +x bin/*", "npm install",
-      "sleep 5",
+      "cd ~/app", "chmod +x bin/*",
+      "curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -",
+      "sudo yum install -y nodejs", "npm install",
       "sudo mv ~/app/rearc.service /etc/systemd/system",
       "sudo systemctl daemon-reload",
       "sudo systemctl enable rearc",

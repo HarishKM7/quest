@@ -10,9 +10,10 @@ module "key_pair" {
 }
 
 module "secrets_manager" {
-  source = "lgallard/secrets-manager/aws"
+  source                  = "lgallard/secrets-manager/aws"
+  recovery_window_in_days = 0
   secrets = [{
-    name          = "rearc-quest-private-key"
+    name          = "rearc-private-key"
     secret_string = tls_private_key.tls_key.private_key_pem
   }]
 }

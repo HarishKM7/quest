@@ -8,11 +8,11 @@ Here are the links to the LIVE app:
 
 NOTE: The infra supporting these will be torn down on August 25, 2021!
 
-- http://13.232.252.70:3000/ — Node.js app (Express.js server) running as a systemd service in a 64-bit Amazon Linux 2 EC2 instance. No Docker. No secret word. No load balancer. No TLS.
+- http://15.206.80.13:3000/ — Node.js app (Express.js server) running as a systemd service in a 64-bit Amazon Linux 2 EC2 instance. No Docker. No secret word. No load balancer. No TLS.
 
-- http://13.232.252.70:3030/ — Node.js app (Express.js server) running as a Docker container in a 64-bit Amazon Linux 2 EC2 instance with secret word "TwelveFactor". No load balancer. No TLS.
+- http://15.206.80.13:3030/ — Node.js app (Express.js server) running as a Docker container in a 64-bit Amazon Linux 2 EC2 instance with secret word "TwelveFactor". No load balancer. No TLS.
 
-- https://rearc-quest-1225965985.ap-south-1.elb.amazonaws.com/ — Node.js app (Express.js server) running as a systemd service in a 64-bit Amazon Linux 2 EC2 instance, fronted by an AWS Application load balancer with TLS. No Docker. No secret word.
+- https://rearc-quest-1949308220.ap-south-1.elb.amazonaws.com/ — Node.js app (Express.js server) running as a systemd service in a 64-bit Amazon Linux 2 EC2 instance, fronted by an AWS Application load balancer with TLS. No Docker. No secret word.
 
 ---
 

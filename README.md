@@ -8,6 +8,12 @@ Here are the links to the LIVE app:
 
 NOTE: The infra supporting these will be torn down on August 25, 2021!
 
+UPDATES [August 25, 2021]:
+- The following links are no longer live. The infra hosting them has been destroyed!
+- GitHub Actions have been disabled for this repo to avoid redeployment of the AWS resources.
+
+---
+
 - http://15.206.80.13:3000/ — Node.js app (Express.js server) running as a systemd service in a 64-bit Amazon Linux 2 EC2 instance. No Docker. No secret word. No load balancer. No TLS.
 
 - http://15.206.80.13:3030/ — Node.js app (Express.js server) running as a Docker container in a 64-bit Amazon Linux 2 EC2 instance with secret word "TwelveFactor". No load balancer. No TLS.
